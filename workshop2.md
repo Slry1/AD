@@ -65,7 +65,9 @@ import gspread
 import numpy as np
 gc = gspread.service_account(filename='timohamalyshevdatascience-4cabc74eb811.json')
 sh = gc.open("UnityWorkshop2")
-price = np.random.randint(2000, 10000, 11)
+rng = np.random.default_rng()
+price_start = 100000 #gold
+priceinf = 0
 mon = list(range(1,11))
 i = 0
 while i <= len(mon):
@@ -73,15 +75,18 @@ while i <= len(mon):
     if i == 0:
         continue
     else:
-        tempInf = ((price[i-1]-price[i-2])/price[i-2])*100
-        tempInf = str(tempInf)
+        priceinf = rng.random()
+        price_start = price_start*(0.65+priceinf)
+        tempInf = str(price_start)
         tempInf = tempInf.replace('.',',')
         sh.sheet1.update(('A' + str(i)), str(i))
-        sh.sheet1.update(('B' + str(i)), str(price[i-1]))
+        sh.sheet1.update(('B' + str(i)), str(priceinf))
         sh.sheet1.update(('C' + str(i)), str(tempInf))
         print(tempInf)
 
 ```
+![image](https://github.com/Slry1/AD/assets/129071869/faece205-af2b-42cc-8995-efcca88cd1ea)
+Стоимость WoW токена
 
 ## Задание 3
 ### Настройте на сцене Unity воспроизведение звуковых файлов, описывающих динамику изменения выбранной переменной. Например, если выбрано здоровье главного персонажа вы можете выводить сообщения, связанные с его состоянием.
@@ -113,19 +118,19 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dataSet["Mon_" + i.ToString()] <= 10 & statusStart == false & i != dataSet.Count)
+        if (dataSet["Mon_" + i.ToString()] <= 150000 & statusStart == false & i != dataSet.Count)
         {
             StartCoroutine(PlaySelectAudioGood());
             Debug.Log(dataSet["Mon_" + i.ToString()]);
         }
 
-        if (dataSet["Mon_" + i.ToString()] > 10 & dataSet["Mon_" + i.ToString()] < 100 & statusStart == false & i != dataSet.Count)
+        if (dataSet["Mon_" + i.ToString()] > 150000 & dataSet["Mon_" + i.ToString()] < 200000 & statusStart == false & i != dataSet.Count)
         {
             StartCoroutine(PlaySelectAudioNormal());
             Debug.Log(dataSet["Mon_" + i.ToString()]);
         }
 
-        if (dataSet["Mon_" + i.ToString()] >= 100 & statusStart == false & i != dataSet.Count)
+        if (dataSet["Mon_" + i.ToString()] >= 200000 & statusStart == false & i != dataSet.Count)
         {
             StartCoroutine(PlaySelectAudioBad());
             Debug.Log(dataSet["Mon_" + i.ToString()]);
@@ -179,6 +184,8 @@ public class NewBehaviourScript : MonoBehaviour
 }
 
 ```
+Если стоимость WoW токена меньше 150к золота = хороший звук, от 150к до 200к = нормально, более 200к = "Вы самый жестокий тиран в королевстве, ваша светлость"
+
 
 ## Выводы
 
