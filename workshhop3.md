@@ -44,6 +44,7 @@
 Количество энергетических щитов.
 Время спавна яиц.
 А также я добавил свою переменную. Некий гоал, чтобы пройти на следующий уровень, количество яиц нужных для прохождения на следующую по сложности сцену
+
 ![image](https://github.com/Slry1/AD/assets/129071869/e42a2a2b-b1d1-4d01-aa15-6f690bcf87f4)
 
 https://docs.google.com/spreadsheets/d/1J4yuhRYRWakPQwz5t9bnkk7gWQXyqX089jOoQ9Drd1A/edit?usp=sharing
