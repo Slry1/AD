@@ -55,7 +55,7 @@ https://docs.google.com/spreadsheets/d/1J4yuhRYRWakPQwz5t9bnkk7gWQXyqX089jOoQ9Dr
 Ход работы:
 Было создано 10 сцен. У каждой сцены есть buildIndex, в зависимости от него былы изменены переменные.
 Также в счетчике очков добавил условие перехода на следующую сцену (score > 10*buildIndex) NextLevel()
-
+Ссылка на репозиторий с проектом: https://github.com/Slry1/DragonPickerDefault-main
 ## Задание 3
 ### Решение в 80+ баллов должно заполнять google-таблицу данными из Python. В Python данные также должны быть визуализированы.
 Ход работы:
