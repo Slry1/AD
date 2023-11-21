@@ -135,15 +135,24 @@ XOR | дать комментарии о корректности работы
 ![image](https://github.com/Slry1/AD/assets/129071869/07d5828a-cfdf-49f5-9981-d3cc04591eed)
 ![image](https://github.com/Slry1/AD/assets/129071869/a7b393e1-dbd5-45ff-881e-356930e333cc)
 
+![image](https://github.com/Slry1/AD/assets/129071869/8f97ed5a-2dca-4db5-b3f1-18c5ef20cfad)
+![image](https://github.com/Slry1/AD/assets/129071869/0beb2172-b550-435d-b206-ef1c7247fc10)
+![image](https://github.com/Slry1/AD/assets/129071869/217147d2-b93a-4124-a5f4-28e50af3a913)
+![image](https://github.com/Slry1/AD/assets/129071869/10764266-db6f-4ed6-bb08-e4a6d3e45df0)
+![image](https://github.com/Slry1/AD/assets/129071869/40ca9624-79fa-4f62-9218-d4e1a8a249d8)
+![image](https://github.com/Slry1/AD/assets/129071869/f981bd4e-2c0f-4331-9c49-9f0a5cfbdf89)
+![image](https://github.com/Slry1/AD/assets/129071869/0b01a598-a810-432f-b874-8ea9236cb1f9)
+![image](https://github.com/Slry1/AD/assets/129071869/a425d292-8b6e-469c-8a96-c5795037a902)
+
+Тут мы можем увидеть, что при обучении модели на малом количестве эпох, модель еще может случайно угадать ответ, но при дальнейшем обучении модель выдает всегда 4 ошибки. Это указывает на недостатки в самом методе обучения модели. Даже при 100 эпохах, когда модель должна быть переобученна в хлам, она выдает 4 ошибки.
+
+![image](https://github.com/Slry1/AD/assets/129071869/99cfde80-df0c-444f-b499-67543f2e7389)
 
 
 
 
 ## Задание 2
 ### Построить графики зависимости количества эпох от ошибки  обучения. Указать от чего зависит необходимое количество эпох обучения.
-- Перечисленные в этом туториале действия могут быть выполнены запуском на исполнение скрипт-файла, доступного [в репозитории](https://github.com/Den1sovDm1triy/hfss-scripting/blob/main/ScreatingSphereInAEDT.py).
-- Для запуска скрипт-файла откройте Ansys Electronics Desktop. Перейдите во вкладку [Automation] - [Run Script] - [Выберите файл с именем ScreatingSphereInAEDT.py из репозитория].
-
 Ход работы:
 
 
