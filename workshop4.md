@@ -47,7 +47,7 @@ XOR | дать комментарии о корректности работы
 Ход работы:
 Прикрепил к пустому GameObject скрипт perceptron.cs, изучил его. 
 
-## Добавил входные данные для функции OR
+### Добавил входные данные для функции OR
 ![image](https://github.com/Slry1/AD/assets/129071869/ddd09606-a659-4eca-b9a5-95e31dcd4497)
 ![image](https://github.com/Slry1/AD/assets/129071869/d87f7300-799b-4227-b1da-c8d13d99eb2d)
 
@@ -85,7 +85,10 @@ XOR | дать комментарии о корректности работы
 
 При пяти эпохах и более уже все модели могуть обучиться без ошибок.
 
-## Добавил входные данные для функции AND
+### Добавил входные данные для функции AND
+
+![image](https://github.com/Slry1/AD/assets/129071869/3b808f61-1b5c-4455-b297-df4972df3cfd)
+![image](https://github.com/Slry1/AD/assets/129071869/0ae700d8-7518-496a-a4dc-38bf9b70002c)
 
 Повторяем тот же процесс для этой функции
 
@@ -98,7 +101,39 @@ XOR | дать комментарии о корректности работы
 ![image](https://github.com/Slry1/AD/assets/129071869/b8dec21c-a38a-4443-a576-55f74b442ecb)
 ![image](https://github.com/Slry1/AD/assets/129071869/4f72ffb1-9fd6-4c35-808b-ce2a3ca787cf)
 
-При обучении моделей мы можем наблюдать, что на 1-4
+При обучении моделей мы можем наблюдать, что на 1-5 эпохах модель не может правильно обучится и выдает неправильные предикты, количество ошибок с возрастанием эпох не всегда уменьшается. На 6 эпохах и более модель обучается и дает правильные предикты
+
+### Функция NAND
+Таблица истинности для NAND:
+
+![image](https://github.com/Slry1/AD/assets/129071869/af7b10f9-2da5-4cfa-bde6-353ae6f36a30)
+
+Добавляем входные данные для NAND и тестируем обучаемость модели при разных эпохах...
+
+![image](https://github.com/Slry1/AD/assets/129071869/eb4ebeb5-7eab-4015-ae02-700da1dc68ee)
+![image](https://github.com/Slry1/AD/assets/129071869/edfa3d50-46ed-423c-8a84-9ea4f93ea48a)
+
+![image](https://github.com/Slry1/AD/assets/129071869/476e69a9-2d33-42a7-8247-a67dfdf8ae1a)
+![image](https://github.com/Slry1/AD/assets/129071869/f0c5f7f8-bba3-470f-95f2-95962f16704d)
+![image](https://github.com/Slry1/AD/assets/129071869/b762965d-5d0c-449f-8122-92d419ba8006)
+![image](https://github.com/Slry1/AD/assets/129071869/701eca47-7482-4e9d-824c-dc2e42e369d0)
+![image](https://github.com/Slry1/AD/assets/129071869/abac2d86-d656-41e9-9421-d7c3a4ef6243)
+![image](https://github.com/Slry1/AD/assets/129071869/c61a1de4-bc6b-4f60-b3d4-dee88fef53b6)
+![image](https://github.com/Slry1/AD/assets/129071869/741d92e1-b667-4c55-aa68-d6e65aa03de4)
+![image](https://github.com/Slry1/AD/assets/129071869/73e8f63f-71dc-4d95-a0d0-49aa3255265e)
+
+Можем наблюдать разное количество ошибок на всех эпохах, это указывает на то, что при малом количестве эпох, успешность модели зависит от удачи. На эпохах 7 и более уже больше моделей успешно обучаются 
+
+### XOR
+
+Таблица истинности функции:
+
+![image](https://github.com/Slry1/AD/assets/129071869/31c4b3f8-359d-472e-bce5-16739c2cc4c0)
+
+Добавляем входные данные для XOR и тестируем модели на разных эпохах.
+
+![image](https://github.com/Slry1/AD/assets/129071869/07d5828a-cfdf-49f5-9981-d3cc04591eed)
+![image](https://github.com/Slry1/AD/assets/129071869/a7b393e1-dbd5-45ff-881e-356930e333cc)
 
 
 
