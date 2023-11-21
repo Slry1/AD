@@ -46,6 +46,19 @@ XOR | дать комментарии о корректности работы
 
 Ход работы:
 Прикрепил к пустому GameObject скрипт perceptron.cs, изучил его. Добавил входные данные для функции OR
+![image](https://github.com/Slry1/AD/assets/129071869/ddd09606-a659-4eca-b9a5-95e31dcd4497)
+![image](https://github.com/Slry1/AD/assets/129071869/d87f7300-799b-4227-b1da-c8d13d99eb2d)
+После этого начал пробовать менять количество эпох для обучения
+Для одной эпохи:
+![image](https://github.com/Slry1/AD/assets/129071869/d3831170-bc55-43fb-93ec-e01cd6d16cd6)
+Для двух:
+![image](https://github.com/Slry1/AD/assets/129071869/50447eb6-dc51-4981-8867-9bf6ff34f965)
+Для трех:
+![image](https://github.com/Slry1/AD/assets/129071869/384b40c1-6396-41c0-ade5-0231bbfe1c14)
+![image](https://github.com/Slry1/AD/assets/129071869/f45c862a-c3ce-4d2c-813b-8b0276117d63)
+
+
+
 
 
 ## Задание 2
