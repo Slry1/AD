@@ -167,7 +167,149 @@ https://docs.google.com/spreadsheets/d/156yOswVvQjznHSDJu2H_wAbB_TYeE5IfkK5uF-wh
 ### Построить визуальную модель работы перцептрона на сцене Unity.
 
 Ход работы:
+Создал 8 кубов, нули и единицы. Черные - нули, а белые это единицы. Логика состоит в том, что если результат соприкосновения двух кубов(единицы и нулей) равняется нулю, то оба объекта уничтожаются. Скрипт перцептрона прикреплен к верхним кубам
 
+```c#
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class TrainingSet
+{
+    public double[] input;
+    public double output;
+}
+
+public class Perceptron : MonoBehaviour
+{
+    public GameObject attached;
+    public TrainingSet[] ts;
+    double[] weights = { 0, 0 };
+    double bias = 0;
+    double totalError = 0;
+
+    double DotProductBias(double[] v1, double[] v2)
+    {
+        if (v1 == null || v2 == null)
+            return -1;
+
+        if (v1.Length != v2.Length)
+            return -1;
+
+        double d = 0;
+        for (int x = 0; x < v1.Length; x++)
+        {
+            d += v1[x] * v2[x];
+        }
+
+        d += bias;
+
+        return d;
+    }
+
+    double CalcOutput(int i)
+    {
+        double dp = DotProductBias(weights, ts[i].input);
+        if (dp > 0) return (1);
+        return (0);
+    }
+
+    void InitialiseWeights()
+    {
+        for (int i = 0; i < weights.Length; i++)
+        {
+            weights[i] = Random.Range(-1.0f, 1.0f);
+        }
+        bias = Random.Range(-1.0f, 1.0f);
+    }
+
+    void UpdateWeights(int j)
+    {
+        double error = ts[j].output - CalcOutput(j);
+        totalError += Mathf.Abs((float)error);
+        for (int i = 0; i < weights.Length; i++)
+        {
+            weights[i] = weights[i] + error * ts[j].input[i];
+        }
+        bias += error;
+    }
+
+    double CalcOutput(double i1, double i2)
+    {
+        double[] inp = new double[] { i1, i2 };
+        double dp = DotProductBias(weights, inp);
+        if (dp > 0) return (1);
+        return (0);
+    }
+
+    void Train(int epochs)
+    {
+        InitialiseWeights();
+
+        for (int e = 0; e < epochs; e++)
+        {
+            totalError = 0;
+            for (int t = 0; t < ts.Length; t++)
+            {
+                UpdateWeights(t);
+                Debug.Log("W1: " + (weights[0]) + " W2: " + (weights[1]) + " B: " + bias);
+            }
+            Debug.Log("Количество эпох: "+ (e+1) + " TOTAL ERROR: " + totalError);
+        }
+    }
+
+    void Start()
+    {
+        attached = gameObject;
+        Train(10);
+        Debug.Log("Test 0 0: " + CalcOutput(0, 0));
+        Debug.Log("Test 0 1: " + CalcOutput(0, 1));
+        Debug.Log("Test 1 0: " + CalcOutput(1, 0));
+        Debug.Log("Test 1 1: " + CalcOutput(1, 1));
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        int objNum = attached.name == "Cube 1" ? 1 : 0;
+        int collidedNum = collision.gameObject.name == "Cube 1" ? 1 : 0;
+        if (CalcOutput(objNum,collidedNum) == 0)
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
+
+    void Update()
+    {
+
+    }
+}
+
+```
+
+![image](https://github.com/Slry1/AD/assets/129071869/8c6e8a4d-ff35-4f8f-9645-18d4f089cdd2)
+
+
+### OR
+
+![image](https://github.com/Slry1/AD/assets/129071869/efc66fc4-f963-4c3c-968e-858f200305f9)
+
+### AND
+
+![image](https://github.com/Slry1/AD/assets/129071869/66fc76f9-8a24-4ba4-ab50-c3012dc9a393)
+
+### NAND
+
+![image](https://github.com/Slry1/AD/assets/129071869/8f5d0ad1-53d4-4b82-b52c-94fe2d1805d4)
+
+### XOR
+
+![image](https://github.com/Slry1/AD/assets/129071869/e6521796-9a70-4839-bcea-1f0bbd74859b)
+![image](https://github.com/Slry1/AD/assets/129071869/eac545fe-14a1-4c5e-910e-d032616fdb15)
+
+Т.к. перцептрон не обучается корректно на функции XOR, он выдает неправильные ответы. При 10 эпохах, 0 XOR 0 = 1 или 0 XOR 0, 0 XOR 1 = 1
 
 ## Выводы
 
