@@ -45,7 +45,9 @@ NAND | дать комментарии о корректности работы
 XOR | дать комментарии о корректности работы
 
 Ход работы:
-Прикрепил к пустому GameObject скрипт perceptron.cs, изучил его. Добавил входные данные для функции OR
+Прикрепил к пустому GameObject скрипт perceptron.cs, изучил его. 
+
+## Добавил входные данные для функции OR
 ![image](https://github.com/Slry1/AD/assets/129071869/ddd09606-a659-4eca-b9a5-95e31dcd4497)
 ![image](https://github.com/Slry1/AD/assets/129071869/d87f7300-799b-4227-b1da-c8d13d99eb2d)
 
@@ -63,6 +65,40 @@ XOR | дать комментарии о корректности работы
 
 ![image](https://github.com/Slry1/AD/assets/129071869/384b40c1-6396-41c0-ade5-0231bbfe1c14)
 ![image](https://github.com/Slry1/AD/assets/129071869/f45c862a-c3ce-4d2c-813b-8b0276117d63)
+
+При трех эпохах некоторые модели уже могут научиться безошибочно выполнять функцию OR, но кажется, что нужно добавить еще эпох, чтобы все модели были обучены правильно
+
+Четыре эпохи:
+
+![image](https://github.com/Slry1/AD/assets/129071869/c37a3add-5842-4d80-aeba-9e9b21b7f007)
+![image](https://github.com/Slry1/AD/assets/129071869/18b319a1-0102-46aa-9a08-dc6dfadf0031)
+
+При четырех большинство моделей уже может правильно обучиться, однако некоторые модели все-равно могут допускать ошибки
+
+Пять:
+
+![image](https://github.com/Slry1/AD/assets/129071869/b1fac503-4d48-478b-9527-f2ff266e2c77)
+
+Шесть:
+
+![image](https://github.com/Slry1/AD/assets/129071869/1ff06acb-f06f-409d-8b23-2dca7d0035b4)
+
+При пяти эпохах и более уже все модели могуть обучиться без ошибок.
+
+## Добавил входные данные для функции AND
+
+Повторяем тот же процесс для этой функции
+
+![image](https://github.com/Slry1/AD/assets/129071869/c6167a10-b38f-4cd3-b728-94fa25903ac1)
+![image](https://github.com/Slry1/AD/assets/129071869/7b36d038-1518-4990-940c-4ce7360a16f7)
+![image](https://github.com/Slry1/AD/assets/129071869/7b877f10-f107-4c5f-b85b-ab9912fda557)
+![image](https://github.com/Slry1/AD/assets/129071869/811781dc-32c7-4d37-abb0-5e2ea68ab09a)
+![image](https://github.com/Slry1/AD/assets/129071869/470a39f9-e24a-46bb-bdb3-d1683167e16b)
+![image](https://github.com/Slry1/AD/assets/129071869/ef1e1a27-fb64-4204-b091-0759125364b1)
+![image](https://github.com/Slry1/AD/assets/129071869/b8dec21c-a38a-4443-a576-55f74b442ecb)
+![image](https://github.com/Slry1/AD/assets/129071869/4f72ffb1-9fd6-4c35-808b-ce2a3ca787cf)
+
+При обучении моделей мы можем наблюдать, что на 1-4
 
 
 
